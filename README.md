@@ -134,6 +134,7 @@ ___
 
 ___
 ### Touch Interaction
+Blui takes mouse events as input, so we will translate the users touch interactions to mouse clicks and scrolls based on the location of touch.
 
 1. Open the "VRTablet" Actor and select the screen, scroll down in the detals tap and Add the event "On Component Begin Overlap" to your graph. Create a new Variable and change its type to Primitve Component. Name it "Overlapping Components", Change it from a single value to an array by clicking next to its data type and then choosing array.
 
@@ -149,6 +150,35 @@ ___
 <img width="581" alt="image" src="https://github.com/user-attachments/assets/43cd4c77-568b-4777-96af-504e84662258" />
 
 ___
+3. Use a branch component to destingush if one finger is touching the screen, two fingers are touching the screen, or more. If one is toucing we do a Tap gesture or a Pan gesture, if two are touching we do a pinch/strich gesture, if more we do nothing.
+
+<img width="581" alt="image" src="https://github.com/user-attachments/assets/07d2e51f-31fa-40f2-b205-005d3651f052" />
+
+___
+#### Tap and Pan Gestures
+To do a pan or a tap, we need to use three mouse events "Trigger Left Mouse Down" then "Trigger Mouse Move" and when the overlap ends we use "Trigger Left Mouse up" to finish the gesture.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/10397313-ff42-4eb5-8446-6c5047937920" />
+
+___
+4. To be able to use these functions we need to copy the function "GetBlui" from "InteractableBluiWidgetActor" from "Blui Content" in the content browser, paste the function in our VRTablet Actor functions section. Drag and drop the screen component to replace the widget after copying. Drag and drop the function to the graph and connect it to the target of the ones we have already.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/aaff0a3c-4db2-4341-a098-252b2f869815" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/7ec4862a-9d6b-48d7-baab-57aa91a86cad" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/00b5bf3e-19b9-419b-ae81-2fed5e6a32e5" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/109b2f20-ffbe-488a-aca9-b54e941eb08d" />
+
+___
+5. To Know the position we are touching at, we need to translate the 3d world location of the finger to a 2d position on the tablet screen.
+   - We get the World loaction of the center of the Other comp (the finger) and the World loaction of the center of the screen, then we find the defrance between them.
+   - We get the retation of the tablet
+   - We translate the destance the finger travels on the X, Y, and Z axies to a 2D array.
+   - We send that array to the Mouse triggers as input.
+
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/0e10fc4a-f07c-4dc4-b34c-57dbb3f8717c" />
+
+___
+
 
 
 
