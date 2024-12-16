@@ -72,14 +72,14 @@ ___
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/cf8a99ca-7d8f-4d05-9588-5a434531c583" />
 
 ___
-2. Open the new folder and Click on Add/Import again, press on Blueprint Class. Then select Actor and name it VRTablet, open it by double clicking on it
+2. Open the new folder and Click on Add/Import again, press on Blueprint Class. Then select Actor and name it "VRTablet", open it by double clicking on it
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/87ad36dc-2090-4757-8bfc-c951ec02fc1d" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/d90124c8-a43d-400b-b959-b425f44e7fc3" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/cd28b1e5-164e-430a-bcc8-d1c0e5e8e51d" />
 
 ___
-3. Press on Add Component and search for widget then click on it, Name it screen. 
+3. Press on Add Component and search for widget then click on it, Name it "screen". 
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/bf5f90c9-159c-4863-9bf8-641c4ebe039d" />
 
@@ -90,7 +90,7 @@ ___
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/4ca5cb5a-be87-4155-ad26-fef86b150361" />
 
 ___
-5. Go back to the content browser and open "BluiWorldWidgetActorExample" right click on "InitBluiWidget" and copy the function, then go to your VRTablet Actor and right click on the functions section and paste the function.
+5. Go back to the content browser and open "BluiWorldWidgetActorExample" right click on "InitBluiWidget" and copy the function, then go to your "VRTablet" Actor and right click on the functions section and paste the function.
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/9c70f904-59dd-461f-9e42-bed9b3138b25" />
 <img width="236" alt="image" src="https://github.com/user-attachments/assets/611951af-f4cd-4553-8152-f3f1c3a4f616" />
@@ -104,6 +104,39 @@ ___
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/c98b7a1a-c8c0-4287-ac36-0bd829790862" />
 
 ___
+7. Open the Event Graph, Right click in the empty space, search for "initBluiWidget" and add it to your graph. Then connect it with "Event BeginPlay" then hit compile.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/dac27ffd-25fd-4405-990d-f7639c9ea5c9" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b5237355-69c9-4502-adc4-1733deb3f8d3" />
+
+___
+8. Change the default value of the URL variable to any website you want by clicking on the variable and writing the URL in the details tap.
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/f5a8e371-3159-4fdc-b9fc-0f77ce2ecbc0" />
+
+___
+If you drag and drop the current "VRTablet" to the scene it will look like this
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/fd180dfd-9112-4194-a46c-b5feb6cbb2c2" />
+
+___
+9. To fix the rendering change the screen Draw size to something semilar to a real tablet (1920,1080), then scale it down in your scene.
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/697bcd1f-27ac-4ccd-97e2-b8e5a4d23185" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/a9cf6a40-f7c0-4d76-a8d7-b863ecd87b82" />
+
+___
+10. Go back to your "VRTablet" Actor and add a new cube component, name it "Body". Unlock the scale and agust it to the appropriate size. Move the "Body" back to make the screen appear on the surface.
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/65e5b010-5b55-4676-9d1e-45ef5dc6e0b2" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/41d93819-c9e6-408c-9927-87268612316a" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/b813e115-04f7-4c76-991b-422458819d65" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/9eb1eac6-16a5-4d70-beda-2c093fd62852" />
+
+___
+### Touch Interaction
+
+
+
 
 
 
