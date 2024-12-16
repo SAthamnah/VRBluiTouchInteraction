@@ -66,7 +66,7 @@ If you select the widgit under the defualtsceneroot you can change the resolouti
 
 ___
 ## Touch Interaction in 3D space (VR Tablet)
-### New Blui Widget in 3D space
+### Create VRTablet (New Blui Widget in 3D space)
 1. Click on Add/Import in your Content Browser and create a new folder
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/cf8a99ca-7d8f-4d05-9588-5a434531c583" />
@@ -135,8 +135,20 @@ ___
 ___
 ### Touch Interaction
 
+1. Open the "VRTablet" Actor and select the screen, scroll down in the detals tap and Add the event "On Component Begin Overlap" to your graph. Create a new Variable and change its type to Primitve Component. Name it "Overlapping Components", Change it from a single value to an array by clicking next to its data type and then choosing array.
 
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/b50f4b0d-3a24-4ec2-ad84-e69cd088da7c" />
+<img width="900" alt="image" src="https://github.com/user-attachments/assets/e7ad654f-b7fa-4ee7-89c1-2901414af65a" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/1b753478-37f9-478b-a5ca-bca81acc73b2" />
 
+___
+2. Drag the variable and drop it in the graph, press on get. Drag from the vraiable refrance and seach for "Add Unique". Connect the components like in the screenshot. This will add any componet that overlaps the screen to an array, we will use this to findout how many fingers are touching the screen.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/50af0cc9-b9c7-4818-84ab-9d3310eafd3a" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/408fcc87-be76-4911-9a54-152494676e0e" />
+<img width="581" alt="image" src="https://github.com/user-attachments/assets/43cd4c77-568b-4777-96af-504e84662258" />
+
+___
 
 
 
