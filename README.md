@@ -59,7 +59,7 @@ From the details tap you can change the URL to be loaded on the widget
 
 ___
 ### Change Dimensions
-If you select the widgit under the defualtsceneroot you can change the resoloution and rasio of the widget, EX 2000 by 1000:
+If you select the widgit under the defualtsceneroot you can change the resoloution and rasio of the widget, Ex. 2000 by 1000:
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/44317aa6-abfd-44ec-b9a5-c0ea377d58df" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/61b8b920-9fd9-4f83-a737-b22b8ebd3553" />
@@ -161,7 +161,7 @@ To do a pan or a tap, we need to use three mouse events "Trigger Left Mouse Down
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/10397313-ff42-4eb5-8446-6c5047937920" />
 
 ___
-4. To be able to use these functions we need to copy the function "GetBlui" from "InteractableBluiWidgetActor" from "Blui Content" in the content browser, paste the function in our VRTablet Actor functions section. Drag and drop the screen component to replace the widget after copying. Drag and drop the function to the graph and connect it to the target of the ones we have already.
+4. To use these functions we need to copy the function "GetBlui" from "InteractableBluiWidgetActor" from "Blui Content" in the content browser, paste the function in our VRTablet Actor functions section. Drag and drop the screen component to replace the widget after copying. Drag and drop the function to the graph and connect it to the target of the ones we have already.
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/aaff0a3c-4db2-4341-a098-252b2f869815" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/7ec4862a-9d6b-48d7-baab-57aa91a86cad" />
@@ -169,15 +169,20 @@ ___
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/109b2f20-ffbe-488a-aca9-b54e941eb08d" />
 
 ___
-5. To Know the position we are touching at, we need to translate the 3d world location of the finger to a 2d position on the tablet screen.
-   - We get the World loaction of the center of the Other comp (the finger) and the World loaction of the center of the screen, then we find the defrance between them.
-   - We get the retation of the tablet
-   - We translate the destance the finger travels on the X, Y, and Z axies to a 2D array.
-   - We send that array to the Mouse triggers as input.
+5. To Know the position we are touching at, we need to translate the 3d world location of the finger to a 2d position on the tablet screen. go back the main scene.
+Change the prespictiove to front or left based on your tablets oriantaion, mesure the width and hight of the tablet by pressing close to one corner of the tablet the mouse middel button and dragging to the other corner of the tablet. 
 
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/0e10fc4a-f07c-4dc4-b34c-57dbb3f8717c" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/ecd2f648-4d44-4cb1-a5d4-a7f8e7f1ee69" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/92c3dfec-2923-4548-9791-9a10886ed777" />
 
 ___
+Use the mesured numbers (Ex. 600,344) and the screen resolution (Ex. 1920,1080) to translate the distance the finger will travel in 3d space to a relative 2d position on the tablets screen.
+   - First we get the World loaction of the center of the Other comp (the finger) and the World loaction of the center of the screen, then we find the defrance between them.
+   - Secound we get the retation of the tablet
+   - Then we translate the destance the finger travels on the X, Y, and Z axies to a 2D array. Write the Width in "the Map Range Clamped" function. Note that you have to devide the mesured length on 2 becouse the relative refrance is the center of the tablet. do the same for the Hight of tablet. The Lerp function is used with two cosine functions to adjust for any telt in the tablet.
+   - Finaly we send that 2D array to the Mouse triggers as input.
+
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/2fe2bebf-6649-4d48-a1cc-9567cc60cd53" />
 
 
 
