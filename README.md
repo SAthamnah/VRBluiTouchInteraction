@@ -136,18 +136,20 @@ ___
 ### Touch Interaction
 Blui takes mouse events as input, so we will translate the users touch interactions to mouse clicks and scrolls based on the location of touch.
 
-1. Open the "VRTablet" Actor and select the screen, scroll down in the detals tap and Add the event "On Component Begin Overlap" to your graph. Create a new Variable and change its type to Primitve Component. Name it "Overlapping Components", Change it from a single value to an array by clicking next to its data type and then choosing array.
+1. Open the "VRTablet" Actor and select the screen, scroll down in the detals tap and Add the events "On Component Begin Overlap" and "On Component End Overlap" to your graph. Create a new Variable and change its type to Primitve Component. Name it "Overlapping Components", Change it from a single value to an array by clicking next to its data type and then choosing array.
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/b50f4b0d-3a24-4ec2-ad84-e69cd088da7c" />
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/69f8fd42-2112-4e07-bf7c-7e8a0cd05807" />
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/e7ad654f-b7fa-4ee7-89c1-2901414af65a" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/1b753478-37f9-478b-a5ca-bca81acc73b2" />
 
 ___
-2. Drag the variable and drop it in the graph, press on get. Drag from the vraiable refrance and seach for "Add Unique". Connect the components like in the screenshot. This will add any componet that overlaps the screen to an array, we will use this to findout how many fingers are touching the screen.
+2. Drag the variable and drop it in the graph, press on get. Drag from the vraiable refrance and seach for "Add Unique". Connect the components like in the screenshot. This will add any componet that overlaps the screen to an array, we will use this to findout how many fingers are touching the screen. do the same with the "On Component End Overlap" but "remove item" instaid of "add unique".
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/50af0cc9-b9c7-4818-84ab-9d3310eafd3a" />
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/408fcc87-be76-4911-9a54-152494676e0e" />
 <img width="581" alt="image" src="https://github.com/user-attachments/assets/43cd4c77-568b-4777-96af-504e84662258" />
+<img width="461" alt="image" src="https://github.com/user-attachments/assets/2e82f7cb-334c-4536-b2a9-2ae694ad0738" />
 
 ___
 3. Use a branch component to destingush if one finger is touching the screen, two fingers are touching the screen, or more. If one is toucing we do a Tap gesture or a Pan gesture, if two are touching we do a pinch/strich gesture, if more we do nothing.
@@ -159,6 +161,7 @@ ___
 To do a pan or a tap, we need to use three mouse events "Trigger Left Mouse Down" then "Trigger Mouse Move" and when the overlap ends we use "Trigger Left Mouse up" to finish the gesture.
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/10397313-ff42-4eb5-8446-6c5047937920" />
+<img width="509" alt="image" src="https://github.com/user-attachments/assets/630583c2-c893-49b8-8fa6-9dfce8a9d18e" />
 
 ___
 4. To use these functions we need to copy the function "GetBlui" from "InteractableBluiWidgetActor" from "Blui Content" in the content browser, paste the function in our VRTablet Actor functions section. Drag and drop the screen component to replace the widget after copying. Drag and drop the function to the graph and connect it to the target of the ones we have already.
@@ -176,7 +179,7 @@ Change the prespictiove to front or left based on your tablets oriantaion, mesur
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/92c3dfec-2923-4548-9791-9a10886ed777" />
 
 ___
-Use the mesured numbers (Ex. 600,344) and the screen resolution (Ex. 1920,1080) to translate the distance the finger will travel in 3d space to a relative 2d position on the tablets screen.
+6. Use the mesured numbers (Ex. 600,344) and the screen resolution (Ex. 1920,1080) to translate the distance the finger will travel in 3d space to a relative 2d position on the tablets screen.
    - First we get the World loaction of the center of the Other comp (the finger) and the World loaction of the center of the screen, then we find the defrance between them.
    - Secound we get the retation of the tablet
    - Then we translate the destance the finger travels on the X, Y, and Z axies to a 2D array. Write the Width in "the Map Range Clamped" function. Note that you have to devide the mesured length on 2 becouse the relative refrance is the center of the tablet. do the same for the Hight of tablet. The Lerp function is used with two cosine functions to adjust for any telt in the tablet.
@@ -184,6 +187,42 @@ Use the mesured numbers (Ex. 600,344) and the screen resolution (Ex. 1920,1080) 
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/2fe2bebf-6649-4d48-a1cc-9567cc60cd53" />
 
+___
+7. Drag and drop the other comp and then press on promote to variable, move the set other object and connect it where we only have one finger detected.
+
+<img width="680" alt="image" src="https://github.com/user-attachments/assets/384b51e8-01db-4ac2-bb71-6efc416e14a8" />
+<img width="728" alt="image" src="https://github.com/user-attachments/assets/ac267629-5545-4ed1-bfa3-56b9a00b1634" />
+
+
+___
+8. Create a custom event and name it panning, add set timer by event and connect it to the panning event. Add a branch that checks if the current other object (finger) is the other object (finger) that did the mouse down. drag and drop the return value of the set timer by event function and promote it to a variable. Add "Clear and invalidate timer by handle" after the "On Component End Overlap" event.
+
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/275aa919-d376-4930-be13-850d0fa9f921" />
+<img width="431" alt="image" src="https://github.com/user-attachments/assets/941323ce-0775-4956-95d3-ada4c5151fb5" />
+<img width="456" alt="image" src="https://github.com/user-attachments/assets/6b4d10cd-1133-463d-80d6-3aee5d2c05a2" />
+<img width="420" alt="image" src="https://github.com/user-attachments/assets/73364f65-3fbf-4ebc-b409-47fe8364a649" />
+<img width="668" alt="image" src="https://github.com/user-attachments/assets/598ae43e-48fd-411b-94ad-09e1d93de20c" />
+
+___
+9. Create a variable and call it noRappiedFire, compile. change its defualt value to ture. branch on it before you trigger mouse down. Set its value to false, add a delay of 0.5s and set it back to true. This will allow one finger to trigger the moues at a time.
+
+<img width="242" alt="image" src="https://github.com/user-attachments/assets/d5f8ce62-5423-461b-a8cb-8130977c7183" />
+<img width="311" alt="image" src="https://github.com/user-attachments/assets/1f28f147-a076-40a2-875c-11a3a111e6fb" />
+<img width="705" alt="image" src="https://github.com/user-attachments/assets/353b7dbd-8c6e-4ac9-988f-bf3cb08397e6" />
+<img width="1052" alt="image" src="https://github.com/user-attachments/assets/a13973d7-42d2-4993-83a2-02bb3ae4806e" />
+
+___
+10. Connect "Trigger Left Mouse up" after the end. Copy the position translation code and connect it to the "Trigger Left Mouse up" function. connect the other comp from "On Component End Overlap" to the copied the position translation code.
+
+<img width="973" alt="image" src="https://github.com/user-attachments/assets/1d69260f-7025-4f7b-b7ac-3e8de5d12fc9" />
+
+___
+11. Code so far, we should be able to Tap or Pan/Swipe with the implimntation so far.
+
+<img width="1028" alt="image" src="https://github.com/user-attachments/assets/4a4b00a2-2209-424e-bff8-d2342cdf63b0" />
+
+___
+#### Zoom Gesture
 
 
 
