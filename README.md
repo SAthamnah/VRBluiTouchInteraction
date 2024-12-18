@@ -195,7 +195,7 @@ ___
 
 
 ___
-8. Create a custom event and name it panning, add set timer by event and connect it to the panning event. Add a branch that checks if the current other object (finger) is the other object (finger) that did the mouse down. drag and drop the return value of the set timer by event function and promote it to a variable. Add "Clear and invalidate timer by handle" after the "On Component End Overlap" event.
+8. Create a custom event and name it panning, add set timer by event and connect it to the panning event. Make sure the looping flag is set to true. Add a branch that checks if the current other object (finger) is the other object (finger) that did the mouse down. drag and drop the return value of the set timer by event function and promote it to a variable. Add "Clear and invalidate timer by handle" after the "On Component End Overlap" event.
 
 <img width="416" alt="image" src="https://github.com/user-attachments/assets/275aa919-d376-4930-be13-850d0fa9f921" />
 <img width="431" alt="image" src="https://github.com/user-attachments/assets/941323ce-0775-4956-95d3-ada4c5151fb5" />
@@ -223,6 +223,34 @@ ___
 
 ___
 #### Zoom Gesture
+This gesture will happen when we have two fingers on the screen. Two fingers will satisfy the if statment that checks the length of the overlapping components array. 
+1. First we to make sure that the code we will write will excute once, so we start by adding a branch that only allows one of the two touching fingers to run the code.
+
+<img width="650" alt="image" src="https://github.com/user-attachments/assets/676d59fc-d797-44f0-8fa1-605e92a1dd5d" />
+
+___
+2. Create a vector array to save the fingers locations, compile. add two elmints to the array by clicking on the "+" button bellow default values. Use a for each loop to record the locations of the two touching fingers
+
+<img width="1286" alt="image" src="https://github.com/user-attachments/assets/4163bb8e-5560-4ef8-aed1-1b63de69c962" />
+<img width="182" alt="image" src="https://github.com/user-attachments/assets/8108976f-45ea-479f-ad15-298383431d6c" />
+<img width="205" alt="image" src="https://github.com/user-attachments/assets/aba4cad0-4e82-4d5f-a25d-541b3dc1451f" />
+<img width="746" alt="image" src="https://github.com/user-attachments/assets/be1bc07d-ab90-40b7-9b97-ec651aa0528b" />
+
+___
+3. Create a var and call it Dest, Set it after the complition of the for loop with the destance between the fingers.
+
+<img width="789" alt="image" src="https://github.com/user-attachments/assets/e30e1126-a703-440d-85ef-873f2ee6652a" />
+
+___
+Create a custom event and name is zooming, add a set timer by event and connect it, set looping to true. promote the return value to a variable. and clear and invalidate timer by handle.
+
+<img width="509" alt="image" src="https://github.com/user-attachments/assets/ac69d595-89d3-4ea7-8042-19bc44c0dbc8" />
+<img width="884" alt="image" src="https://github.com/user-attachments/assets/e18f7802-7ba2-4e20-a9ee-e4b54d1439d8" />
+
+___
+Get the destance between the fingers again and nigate from the reading from the previos tick
+
+<img width="872" alt="image" src="https://github.com/user-attachments/assets/4776fa5c-6532-4572-b474-bd21b37d201f" />
 
 
 
