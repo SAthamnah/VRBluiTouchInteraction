@@ -195,12 +195,13 @@ ___
 
 
 ___
-8. Create a custom event and name it panning, add set timer by event and connect it to the panning event. Make sure the looping flag is set to true. Add a branch that checks if the current other object (finger) is the other object (finger) that did the mouse down. drag and drop the return value of the set timer by event function and promote it to a variable. Add "Clear and invalidate timer by handle" after the "On Component End Overlap" event.
+8. Create a custom event and name it panning, add set timer by event and connect it to the panning event. Make sure the looping flag is set to true and set the time to 0.01. Add a branch that checks if the current other object (finger) is the other object (finger) that did the mouse down. drag and drop the return value of the set timer by event function and promote it to a variable. Add "Clear and invalidate timer by handle" after the "On Component End Overlap" event.
 
 <img width="416" alt="image" src="https://github.com/user-attachments/assets/275aa919-d376-4930-be13-850d0fa9f921" />
 <img width="431" alt="image" src="https://github.com/user-attachments/assets/941323ce-0775-4956-95d3-ada4c5151fb5" />
 <img width="456" alt="image" src="https://github.com/user-attachments/assets/6b4d10cd-1133-463d-80d6-3aee5d2c05a2" />
 <img width="420" alt="image" src="https://github.com/user-attachments/assets/73364f65-3fbf-4ebc-b409-47fe8364a649" />
+<img width="203" alt="image" src="https://github.com/user-attachments/assets/069aefb8-dad3-4246-87c9-4106070c2365" />
 <img width="668" alt="image" src="https://github.com/user-attachments/assets/598ae43e-48fd-411b-94ad-09e1d93de20c" />
 
 ___
