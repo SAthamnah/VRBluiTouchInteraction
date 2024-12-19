@@ -125,7 +125,7 @@ ___
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/a9cf6a40-f7c0-4d76-a8d7-b863ecd87b82" />
 
 ___
-10. Go back to your "VRTablet" Actor and add a new cube component, name it "Body". Unlock the scale and agust it to the appropriate size. Move the "Body" back to make the screen appear on the surface.
+10. Go back to your "VRTablet" Actor and add a new cube component, name it "Body". Unlock the scale and adjust it to the appropriate size. Move the "Body" back to make the screen appear on the surface.
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/65e5b010-5b55-4676-9d1e-45ef5dc6e0b2" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/41d93819-c9e6-408c-9927-87268612316a" />
@@ -173,7 +173,7 @@ ___
 
 ___
 5. To Know the position we are touching at, we need to translate the 3d world location of the finger to a 2d position on the tablet screen. go back the main scene.
-Change the prespictiove to front or left based on your tablets oriantaion, mesure the width and hight of the tablet by pressing close to one corner of the tablet the mouse middel button and dragging to the other corner of the tablet. 
+Change the prespictive to front or left based on your tablets oriantaion, mesure the width and hight of the tablet by pressing close to one corner of the tablet the mouse middel button and dragging to the other corner of the tablet. 
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/ecd2f648-4d44-4cb1-a5d4-a7f8e7f1ee69" />
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/92c3dfec-2923-4548-9791-9a10886ed777" />
@@ -181,7 +181,7 @@ Change the prespictiove to front or left based on your tablets oriantaion, mesur
 ___
 6. Use the mesured numbers (Ex. 600,344) and the screen resolution (Ex. 1920,1080) to translate the distance the finger will travel in 3d space to a relative 2d position on the tablets screen.
    - First we get the World loaction of the center of the Other comp (the finger) and the World loaction of the center of the screen, then we find the defrance between them.
-   - Secound we get the retation of the tablet
+   - Secound we get the rotation of the tablet
    - Then we translate the destance the finger travels on the X, Y, and Z axies to a 2D array. Write the Width in "the Map Range Clamped" function. Note that you have to devide the mesured length on 2 becouse the relative refrance is the center of the tablet. do the same for the Hight of tablet. The Lerp function is used with two cosine functions to adjust for any telt in the tablet.
    - Finaly we send that 2D array to the Mouse triggers as input.
 
@@ -225,7 +225,7 @@ ___
 ___
 #### Zoom Gesture
 This gesture will happen when we have two fingers on the screen. Two fingers will satisfy the if statment that checks the length of the overlapping components array. 
-1. First we to make sure that the code we wrote will excute once, so we start by adding a branch that only allows one of the two touching fingers to run the code.
+1. First we need to make sure that the code we wrote will excute once, so we start by adding a branch that only allows one of the two touching fingers to run the code.
 
 <img width="650" alt="image" src="https://github.com/user-attachments/assets/676d59fc-d797-44f0-8fa1-605e92a1dd5d" />
 
@@ -249,7 +249,7 @@ Create a custom event and name is zooming, add a set timer by event and connect 
 <img width="884" alt="image" src="https://github.com/user-attachments/assets/e18f7802-7ba2-4e20-a9ee-e4b54d1439d8" />
 
 ___
-Get the destance between the fingers again and nigate from the reading from the previos tick
+Get the destance between the fingers again and nigate it from the reading from the previos one
 
 <img width="872" alt="image" src="https://github.com/user-attachments/assets/4776fa5c-6532-4572-b474-bd21b37d201f" />
 
