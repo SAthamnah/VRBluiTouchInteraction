@@ -181,7 +181,7 @@ Change the prespictive to front or left based on your tablets oriantaion, mesure
 ___
 6. Use the mesured numbers (Ex. 600,344) and the screen resolution (Ex. 1920,1080) to translate the distance the finger will travel in 3d space to a relative 2d position on the tablets screen.
    - First we get the World loaction of the center of the Other comp (the finger) and the World loaction of the center of the screen, then we find the defrance between them.
-   - Secound we get the rotation of the tablet
+   - Second we get the rotation of the tablet
    - Then we translate the destance the finger travels on the X, Y, and Z axies to a 2D array. Write the Width in "the Map Range Clamped" function. Note that you have to devide the mesured length on 2 becouse the relative refrance is the center of the tablet. do the same for the Hight of tablet. The Lerp function is used with two cosine functions to adjust for any telt in the tablet.
    - Finaly we send that 2D array to the Mouse triggers as input.
 
