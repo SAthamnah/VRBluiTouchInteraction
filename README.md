@@ -225,7 +225,7 @@ ___
 ___
 #### Zoom Gesture
 This gesture will happen when we have two fingers on the screen. Two fingers will satisfy the if statment that checks the length of the overlapping components array. 
-1. First we to make sure that the code we will write will excute once, so we start by adding a branch that only allows one of the two touching fingers to run the code.
+1. First we to make sure that the code we wrote will excute once, so we start by adding a branch that only allows one of the two touching fingers to run the code.
 
 <img width="650" alt="image" src="https://github.com/user-attachments/assets/676d59fc-d797-44f0-8fa1-605e92a1dd5d" />
 
@@ -253,6 +253,21 @@ Get the destance between the fingers again and nigate from the reading from the 
 
 <img width="872" alt="image" src="https://github.com/user-attachments/assets/4776fa5c-6532-4572-b474-bd21b37d201f" />
 
+___
+Add a "Trigger mouse wheel" function, and connect it as follows. Set the value of dest at the end. Copy the code we used to generate that mouse interaction location, modify the part we get the finger location. This will take the location in the middle between the finger as the interaction location.
+
+<img width="1174" alt="image" src="https://github.com/user-attachments/assets/88a1c7e6-389d-4d58-9c6a-0f8d5c5d02a8" />
+<img width="1174" alt="image" src="https://github.com/user-attachments/assets/0da74d69-9418-40e1-9b24-0852eb194ae6" />
+
+___
+this is the final code for zooming
+
+<img width="1082" alt="image" src="https://github.com/user-attachments/assets/1ae4c496-a9a4-40b6-a600-5ed7ccbe73b8" />
+
+___
+### Final blueprint
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/c4630b78-9db6-48c9-8376-75245e32f675" />
 
 
 MIT License
