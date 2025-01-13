@@ -52,7 +52,7 @@ ___
 
 ___
 ### Change URL to load
-From the details tap you can change the URL to be loaded on the widget
+From the details tab you can change the URL to be loaded on the widget
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/f2d7dbc2-b4cf-4b7a-b5ed-710ad51f7969" />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/43891bd5-6d52-41ce-8884-3465d5ad92b7" />
@@ -84,7 +84,7 @@ ___
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/bf5f90c9-159c-4863-9bf8-641c4ebe039d" />
 
 ___
-4. Under the details tap, Change the widget class to BluiWidget. You can view the widget from the Viewport tap.
+4. Under the details tab, Change the widget class to BluiWidget. You can view the widget from the Viewport tab.
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/a2718be5-d5f4-4b98-b730-4d41e32eb53c" />
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/4ca5cb5a-be87-4155-ad26-fef86b150361" />
@@ -110,7 +110,7 @@ ___
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/b5237355-69c9-4502-adc4-1733deb3f8d3" />
 
 ___
-8. Change the default value of the URL variable to any website you want by clicking on the variable and writing the URL in the details tap.
+8. Change the default value of the URL variable to any website you want by clicking on the variable and writing the URL in the details tab.
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/f5a8e371-3159-4fdc-b9fc-0f77ce2ecbc0" />
 
 ___
@@ -136,7 +136,7 @@ ___
 ### Touch Interaction
 Blui takes mouse events as input, so we will translate the users touch interactions to mouse clicks and scrolls based on the location of touch.
 
-1. Open the "VRTablet" Actor and select the screen, scroll down in the details tap and Add the events "On Component Begin Overlap" and "On Component End Overlap" to your graph. Create a new Variable and change its type to Primitive Component. Name it "Overlapping Components", Change it from a single value to an array by clicking next to its data type and then choosing array.
+1. Open the "VRTablet" Actor and select the screen, scroll down in the details tab and Add the events "On Component Begin Overlap" and "On Component End Overlap" to your graph. Create a new Variable and change its type to Primitive Component. Name it "Overlapping Components", Change it from a single value to an array by clicking next to its data type and then choosing array.
 
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/b50f4b0d-3a24-4ec2-ad84-e69cd088da7c" />
 <img width="300" alt="image" src="https://github.com/user-attachments/assets/69f8fd42-2112-4e07-bf7c-7e8a0cd05807" />
